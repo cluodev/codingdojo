@@ -10,6 +10,11 @@ public class TensParser extends AbstractRomanNumericalParser {
 
     @Override
     public String parse(int number) {
+
+        if (number>100 || number<1) {
+            throw new IllegalArgumentException("Invalid number. Expected range [1,100] inclusive");
+        }
+
         String roman = "";
 
         if (getDefaultValue(number) != null) {

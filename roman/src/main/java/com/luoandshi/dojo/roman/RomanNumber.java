@@ -24,8 +24,6 @@ package com.luoandshi.dojo.roman;
  */
 
 public class RomanNumber {
-
-
     private RomanNumericalParser tensParser;
     private RomanNumericalParser hundrendsParser;
     private RomanNumericalParser thousandssParser;
@@ -35,14 +33,8 @@ public class RomanNumber {
         this.tensParser = new TensParser();
     }
 
-    public  String parse(int number) {
+    public String parse(int number) {
         final String parse = tensParser.parse(number);
-        if (parse !=null) {
-            return parse;
-        }
-
-        return null;
+        return parse != null ? parse : null;
     }
-
-
 }
